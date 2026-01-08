@@ -1,0 +1,76 @@
+body{
+    background-color: black;
+    color: white;
+    animation: colorChange 2s infinite;
+}
+.image-animation{
+    width:100%;
+    max-width: 800px;
+    margin:20px auto;
+    padding: 10px;  /* Added padding so background shows! */
+    position: relative;
+}
+
+
+.galaxy-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes colorChange {
+    0%{ background-color:  rgb(47, 3, 47);}
+    50% { background-color: black;}
+    100% {background-color: rgb(47, 3, 47);}
+    
+}
+@keyframes spin {
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    
+}
+.spinning-element{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: auto;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 100%{
+        transform: translateY(0);
+
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+    
+}
+
+.black{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 80px;
+    height: auto;
+    animation: bounce 1s ease-in-out infinite;
+    z-index: 3;
+}
+
+.blue{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: auto;
+    animation: bounce 1s ease-in-out infinite;
+    z-index: 3;
+}
